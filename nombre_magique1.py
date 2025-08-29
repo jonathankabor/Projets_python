@@ -1,3 +1,4 @@
+import random
 
 def demander_nombre(nb_min, nb_max):
     nombre_int = 0
@@ -7,23 +8,37 @@ def demander_nombre(nb_min, nb_max):
             nombre_int = int(nombre_str)
         except:
             print("ERREUR, Vous devez renseigner un nombre. Réessayez")
+        # Pour gérer l'intervalle entre ne nb_min et le nb_max il faut rajouter une condition else
+        # Sinon il sera facile de sortir de l'intervalle
+        # il est important de déclarer à nouveau que nombre_int = 0 à la fin de la condition pour le
+        # forcer à ne pas sortir de la fonction et de reboucler pour demander à nouveau le nombre magique
+        else:
+            if nombre_int < nb_min or nombre_int > nb_max:
+                print(f"ERREUR: Le nombre doit être entre {nb_min} et {nb_max}. Réessayez")
+                nombre_int = 0            
     return nombre_int
 
 
 NOMBRE_MIN = 1
 NOMBRE_MAX = 10
-NOMBRE_MAGIQUE = 5
+NOMBRE_MAGIQUE = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+NB_VIES = 4
 
 
 
 nombre = 0
-
-while not nombre == NOMBRE_MAGIQUE:
+vies = NB_VIES
+while not nombre == NOMBRE_MAGIQUE and vies >  0:
+    print(f"Il vous reste {vies} vies")
     nombre = demander_nombre(NOMBRE_MIN, NOMBRE_MAX)
     if nombre == NOMBRE_MAGIQUE:
         print("Bravo, vous avez gagné")
     elif nombre > NOMBRE_MAGIQUE:
         print("Le nombre magique est plus petit")
+        vies -=1
     else:
         print("Le nombre magique est plus grand")
-    
+        vies -=1
+
+if vies == 0:
+    print(f"Vous avez perdu ! Le nompbre magique était: {NOMBRE_MAGIQUE}")
