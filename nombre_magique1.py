@@ -25,7 +25,9 @@ NOMBRE_MAGIQUE = random.randint(NOMBRE_MIN, NOMBRE_MAX)
 NB_VIES = 4
 
 
-
+# Boucle while
+"""
+# faiblesse de la boucle while dans les cas d'erreur le nombre de vies ne diminue pas
 nombre = 0
 vies = NB_VIES
 while not nombre == NOMBRE_MAGIQUE and vies >  0:
@@ -41,4 +43,27 @@ while not nombre == NOMBRE_MAGIQUE and vies >  0:
         vies -=1
 
 if vies == 0:
+    print(f"Vous avez perdu ! Le nompbre magique était: {NOMBRE_MAGIQUE}")"""
+    
+
+# boucle for
+# il faut rajouté un boolean ici dans la condition ou on gagne pour éviter d'afficher
+# malgré la victoire vous avez perdu, le nombre magique était
+
+gagne = False
+for i in range(0, NB_VIES):
+    vies = NB_VIES-i
+    print(f"Il vous reste {vies} vies")
+    nombre = demander_nombre(NOMBRE_MIN, NOMBRE_MAX)
+    if nombre == NOMBRE_MAGIQUE:
+        print("Bravo, vous avez gagné")
+        gagne = True
+        break
+    elif nombre > NOMBRE_MAGIQUE:
+        print("Le nombre magique est plus petit")
+    else:
+        print("Le nombre magique est plus grand")
+
+#if vies == 0:
+if not gagne:
     print(f"Vous avez perdu ! Le nompbre magique était: {NOMBRE_MAGIQUE}")
