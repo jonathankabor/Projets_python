@@ -1,8 +1,10 @@
 import random
+from tkinter import N
 
 
 NOMBRE_MIN = 1
-NOMBRE_MAX = 10 
+NOMBRE_MAX = 10
+NB_QUESTIONS = 4
 
 def poser_question():
     a = random.randint(NOMBRE_MIN, NOMBRE_MAX)
@@ -16,4 +18,11 @@ def poser_question():
         print("Réponse incorrecte")
         
 
-poser_question()
+
+
+
+for i in range(0,NB_QUESTIONS ):
+    print(f"Question n° {i+1} sur {NB_QUESTIONS}")
+    poser_question()
+    print()
+       
