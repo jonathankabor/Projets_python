@@ -30,3 +30,14 @@ for i in range(0, NB_QUESTIONS):
     
     
 print(f"Votre note est {nb_points} / {NB_QUESTIONS}")
+
+
+moyenne = int (NB_QUESTIONS / 2)
+if nb_points == NB_QUESTIONS:
+    print("Excellent")
+elif nb_points == 0:
+    print("Révisez vos maths !")
+elif nb_points > moyenne:
+    print("Pas mal")
+else:
+    print("Peut mieux faire")
