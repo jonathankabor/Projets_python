@@ -38,6 +38,6 @@ if nb_points == NB_QUESTIONS:
 elif nb_points == 0:
     print("Révisez vos maths !")
 elif nb_points > moyenne:
-    print("Pas mal")
+    print("Pas mal !")
 else:
     print("Peut mieux faire")
