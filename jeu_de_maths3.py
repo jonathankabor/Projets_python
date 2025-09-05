@@ -19,7 +19,7 @@ def poser_question():
     reponse_str = input(f"Calculez : {a} {operateur_str} {b} = ")
     reponse_int = int(reponse_str)
     calcul = a+b
-    if o ==1:
+    if o == 1:
         calcul = a*b
     if reponse_int == calcul:
         return True
