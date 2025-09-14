@@ -33,3 +33,20 @@ while a < 15:
     print(a)
     a = a + 2
 print("fini")
+
+a = input("Rentrez le nombre : ")
+try:
+    a_num = int(a)
+    print(a)
+except:
+    print("ERREUR")
+print("TOUT EST BON")
+
+nom1 = "Jo Le Magicien"
+while True:
+    nom2 =input("Quel est votre nom ? ")
+    if nom2 == nom1:
+        print("Bonjour Jo Le Magicien")
+        break
+    else:
+        print("Renseigner le bon nom")
