@@ -24,7 +24,7 @@ def convertisseur():
                 try:
                     valeur = float(input(f"Conversion {i} : Entrez la valeur en {unite1} à convertir : "))
                     valeur_convertie = valeur * taux
-                    print(f"La valeur convertie est : {valeur_convertie:.2f} {unite2}")2
+                    print(f"La valeur convertie est : {valeur_convertie:.2f} {unite2}")
                     break
                 except ValueError:
                     print("Valeur invalide. Veuillez entrer un nombre.")
