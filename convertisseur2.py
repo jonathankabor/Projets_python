@@ -4,27 +4,27 @@ def convertisseur():
         while True:
             choix = input("Souhaitez-vous convertir de 'pouces vers cm' (entrez '1') ou de 'cm vers pouces' (entrez '2') ? ")
             if choix == '1':
-                unite_source = "pouces"
-                unite_cible = "cm"
+                unite1 = "pouces"
+                unite2 = "cm"
                 taux = 2.54
                 break
             elif choix == '2':
-                unite_source = "cm"
-                unite_cible = "pouces"
+                unite1 = "cm"
+                unite2 = "pouces"
                 taux = 0.394
                 break
             else:
                 print("Choix invalide. Veuillez entrer '1' ou '2'.")
 
-        print(f"\nVous avez choisi de convertir de {unite_source} vers {unite_cible}.")
+        print(f"\nVous avez choisi de convertir de {unite1} vers {unite2}.")
 
     # 2. Boucle pour convertir au moins 4 valeurs
         for i in range(1, 5): # Boucle pour 4 essais
             while True:
                 try:
-                    valeur = float(input(f"Conversion {i} : Entrez la valeur en {unite_source} à convertir : "))
+                    valeur = float(input(f"Conversion {i} : Entrez la valeur en {unite1} à convertir : "))
                     valeur_convertie = valeur * taux
-                    print(f"La valeur convertie est : {valeur_convertie:.2f} {unite_cible}")
+                    print(f"La valeur convertie est : {valeur_convertie:.2f} {unite2}")2
                     break
                 except ValueError:
                     print("Valeur invalide. Veuillez entrer un nombre.")
