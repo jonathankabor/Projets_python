@@ -18,14 +18,18 @@ def effectuer_conversion(unit1: str, unit2: str, facteur: float):
     valeur_convertie = round(valeur_float * 2.54, 2)
     print(f"Résultat de la conversion: {valeur_float} {unit1} = {valeur_convertie} {unit2} ")
     return False
-    
-print("Ce programme vous permet d'effectuer des conversions d'unités")
-print("1 - Pouces vers cm")
-print("2 - cm vers Pouces")
 
-choix = input("Votre choix (1 ou 2): ")
-if not (choix == "1" or choix == "2"):
-    print("ERREUR : Vous devez choisir 1 ou 2")
+while True:
+    print("Ce programme vous permet d'effectuer des conversions d'unités")
+    print("1 - Pouces vers cm")
+    print("2 - cm vers Pouces")
+    choix = input("Votre choix (1 ou 2): ")
+    if not (choix == "1" or choix == "2"):
+        break
+    
+    print("ERREUR : Vous devez choisir 1 ou 2\n")
+    
+    
 while True:
     if choix == "1":
         if effectuer_conversion("pouces", "cm", 2.54):
