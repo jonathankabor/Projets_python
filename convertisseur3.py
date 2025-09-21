@@ -20,6 +20,7 @@ def effectuer_conversion(unit1: str, unit2: str, facteur: float):
     return False
 
 while True:
+    # menu : choix de la conversion
     print("Ce programme vous permet d'effectuer des conversions d'unités")
     print("1 - Pouces vers cm")
     print("2 - cm vers Pouces")
@@ -31,6 +32,7 @@ while True:
     
     
 while True:
+    # Demander les valeurs à convertir à l'utilisateur
     if choix == "1":
         if effectuer_conversion("pouces", "cm", 2.54):
             break
