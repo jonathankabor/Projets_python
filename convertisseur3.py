@@ -12,7 +12,8 @@ def effectuer_conversion(unit1: str, unit2: str, facteur: float):
     try:
         valeur_float = float(valeur_str)
     except ValueError:
-        print("ERREUR: Vous devez rentrer une valeur numérique (utiliser le point et non la virgule pour les décimales)")
+        print("ERREUR: Vous devez rentrer une valeur numérique \n utiliser le point et non la virgule pour les décimales)")
+        return effectuer_conversion(unit1, unit2, facteur)
         
     valeur_convertie = round(valeur_float * 2.54, 2)
     print(f"Résultat de la conversion: {valeur_float} {unit1} = {valeur_convertie} {unit2} ")
@@ -23,7 +24,8 @@ print("1 - Pouces vers cm")
 print("2 - cm vers Pouces")
 
 choix = input("Votre choix (1 ou 2): ")
-
+if not (choix == "1" or choix == "2"):
+    print("ERREUR : Vous devez choisir 1 ou 2")
 while True:
     if choix == "1":
         if effectuer_conversion("pouces", "cm", 2.54):
