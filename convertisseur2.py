@@ -2,7 +2,9 @@ def conversion():
 
     # 1. Demander à l'utilisateur le sens de la conversion
         while True:
+            print("***************************************************************************************************************")
             choix = input("Souhaitez-vous convertir de 'pouces vers cm' (entrez '1') ou de 'cm vers pouces' (entrez '2') ? ")
+            print("***************************************************************************************************************")
             if choix == '1':
                 unite1 = "pouces"
                 unite2 = "cm"
@@ -31,7 +33,9 @@ def conversion():
 
     # 3. Proposer de quitter ou de recommencer
         while True:
-            retenter = input("\nConversion terminée. Voulez-vous recommencer avec un nouveau type de conversion ? (oui/non) ")
+            print("\n****************************************************************************************************************")
+            retenter = input("Conversion terminée. Voulez-vous recommencer avec un nouveau type de conversion ? (oui/non) ")
+            print("****************************************************************************************************************")
             if retenter.lower() == 'non':
                 print("Fin du programme. À bientôt !")
                 return False # Sortie du programme
