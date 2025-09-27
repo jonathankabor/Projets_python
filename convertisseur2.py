@@ -1,4 +1,4 @@
-def convertisseur():
+def conversion():
 
     # 1. Demander à l'utilisateur le sens de la conversion
         while True:
@@ -38,7 +38,7 @@ def convertisseur():
             elif retenter.lower() == 'oui':
                 print("\n")
                 break # Revenir au début de la grande boucle
-        convertisseur()
+        conversion()
 
 # Exécuter le programme
-convertisseur()
+conversion()
