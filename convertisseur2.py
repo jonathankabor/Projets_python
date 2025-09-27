@@ -34,10 +34,11 @@ def convertisseur():
             retenter = input("\nConversion terminée. Voulez-vous recommencer avec un nouveau type de conversion ? (oui/non) ")
             if retenter.lower() == 'non':
                 print("Fin du programme. À bientôt !")
-                return # Sortie du programme
+                return False # Sortie du programme
             elif retenter.lower() == 'oui':
                 print("\n")
                 break # Revenir au début de la grande boucle
+        convertisseur()
 
 # Exécuter le programme
 convertisseur()
