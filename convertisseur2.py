@@ -38,6 +38,8 @@ def conversion():
             elif retenter.lower() == 'oui':
                 print("\n")
                 break # Revenir au début de la grande boucle
+            else:
+                print("Choix invalide. Veuillez entrer 'oui' ou 'non'.")
         conversion()
 
 # Exécuter le programme
