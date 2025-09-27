@@ -41,7 +41,7 @@ def conversion():
                 return False # Sortie du programme
             elif retenter.lower() == 'oui':
                 print("\n")
-                break # Revenir au début de la grande boucle
+                break 
             else:
                 print("Choix invalide. Veuillez entrer 'oui' ou 'non'.")
         conversion()
