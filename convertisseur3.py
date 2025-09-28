@@ -43,8 +43,15 @@ def demander_et_afficher_conversion(unit1: str, unit2: str, facteur: float, reve
 while True:
     # menu : choix de la conversion
     print("Ce programme vous permet d'effectuer des conversions d'unités")
-    print("1 - Pouces vers cm")
-    print("2 - cm vers Pouces")
+    i = 1
+    for c in CONVERSIONS:
+        unit1 = c[0]
+        unit2 = c[1]
+        print(f"{i} - {unit1} vers {unit2}")
+        i+=1
+
+    #print("1 - Pouces vers cm")
+    #print("2 - cm vers Pouces")
     choix = input("Votre choix (1 ou 2): ")
     if (choix == "1" or choix == "2"):
         break
