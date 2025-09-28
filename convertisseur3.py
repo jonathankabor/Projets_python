@@ -15,10 +15,13 @@ Collections
 # la fonction demander_et_afficher_conversion : convertit les unités unit1 vers unit2
 
 #unité de départ, unité d'arrivée, facteur de conversion
-CONVERSIONS = (
-    ("pouces", "cm", 2.54),
-    ("m", "cm", 100),
-    ("km", "miles", 0.621371),
+CONVERSIONS = (                # choix   index     pair   (choix-1)//2
+    ("pouces", "cm", 2.54),    #1        0         F       0
+                               #2        0 + R     T       0
+    ("m", "cm", 100),          #3        1                 1
+                               #4        1 + R             1
+    ("km", "miles", 0.621371), #5        2                 2
+                               #6        2 +               2
     
 )
 
@@ -91,8 +94,21 @@ choix_int = demander_valeur_numerique_utilisateur(1, valeur_choix_maximale)
 while True:
     # Demander les valeurs à convertir à l'utilisateur
     #if choix == "1":
-        if demander_et_afficher_conversion("pouces", "cm", 2.54, reverse=False if choix == "1" else True):
-            break
+    # Si l'utilisateur est 1 alors l'index est 0 (premier item de CONVERSIONS)
+    # Divisé par 2, car on génère des options intermédiaires de conversions inverse
+    # choix = 2 --> index = 0 mais reverse = True (conversion inverse)
+    index = (choix_int-1)//2
+    # True si la valeur est impair
+    reverse = choix_int % 2 == 1
+    
+    # 1 % 2 = 0 * 2 + 1 
+    # 2 % 2 = 1 * 2 + 0
+    # 3 % 2 = 1 * 2 + 1
+    # 4 % 2 = 2 * 2 + 0
+    unit1, unit2, facteur = CONVERSIONS[index]
+    
+    if demander_et_afficher_conversion(unit1, unit2, facteur, reverse):
+        break
         
     #if choix == "2":
         #if demander_et_afficher_conversion("pouces", "cm", 2.54, reverse=True):
