@@ -98,8 +98,8 @@ while True:
     # Divisé par 2, car on génère des options intermédiaires de conversions inverse
     # choix = 2 --> index = 0 mais reverse = True (conversion inverse)
     index = (choix_int-1)//2
-    # True si la valeur est impair
-    reverse = choix_int % 2 == 1
+    # True si la valeur est pair
+    reverse = choix_int % 2 == 0
     
     # 1 % 2 = 0 * 2 + 1 
     # 2 % 2 = 1 * 2 + 0
