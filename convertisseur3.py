@@ -1,9 +1,26 @@
 
+"""
 
+Collections
+- liste de conversions possibles
+- pouces --> cm (...)
+- cm --> m
+- km --> miles
+        
+
+"""
 
 # Conversion de unit1 vers unit2
 # return True : l'utilisateur ne veut plus convertir
-# la fonction effectuer_conversion : convertit les unités unit1 vers unit2
+# la fonction demander_et_afficher_conversion : convertit les unités unit1 vers unit2
+
+#unité de départ, unité d'arrivée, facteur de conversion
+CONVERSIONS = (
+    ("pouces", "cm", 2.54),
+    ("m", "cm", 100),
+    ("km", "miles", 0.621371),
+    
+)
 
 def demander_et_afficher_conversion(unit1: str, unit2: str, facteur: float, reverse: bool = False):
     if reverse:
