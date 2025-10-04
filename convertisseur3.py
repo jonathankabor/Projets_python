@@ -22,6 +22,9 @@ CONVERSIONS = (                # choix   index     pair   (choix-1)//2
                                #4        1 + R             1
     ("km", "miles", 0.621371), #5        2                 2
                                #6        2 +               2
+    ("yard", "m", 0.9144),
+    
+    ("kg", "livres", 2.20462),
     
 )
 
