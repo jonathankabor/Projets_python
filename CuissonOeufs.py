@@ -1,5 +1,5 @@
 import time
-
+import beepy
 
 
 """
@@ -77,7 +77,7 @@ while True:
     else:
         choix = input("Choix invalide. Veuillez entrer 1, 2 ou 3 : ")           
        
-    
+beepy.beep(sound="ping")    
 print("\n C'est prêt ! Vos oeufs sont cuits. Bon appétit")
 
   

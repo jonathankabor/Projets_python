@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231028 20:32:50.289" rpa="false" schemaversion="4">
+<suite id="s1" name="RobotFramework" source="C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework">
+<suite id="s1-s1" name="Tests" source="C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\tests">
+<suite id="s1-s1-s1" name="testDemo1" source="C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\tests\testDemo1.robot">
+<test id="s1-s1-s1-t1" name="Validate Succesful Login" line="16">
+<kw name="open the browser with the Mortgage payment url">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231028 20:32:50.591" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20231028 20:32:50.590" endtime="20231028 20:32:53.126"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:50.590" endtime="20231028 20:32:53.126"/>
+</kw>
+<kw name="Input Username">
+<arg>rahulshettyacademy</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231028 20:32:53.129" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231028 20:32:53.128" endtime="20231028 20:32:53.362"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:53.127" endtime="20231028 20:32:53.362"/>
+</kw>
+<kw name="Input Password">
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231028 20:32:53.364" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231028 20:32:53.363" endtime="20231028 20:32:53.485"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:53.362" endtime="20231028 20:32:53.485"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231028 20:32:53.486" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20231028 20:32:53.486" endtime="20231028 20:32:53.566"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error_Message_Login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231028 20:32:53.566" endtime="20231028 20:32:55.713"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:53.485" endtime="20231028 20:32:55.713"/>
+</kw>
+<kw name="Verify error message is correct">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>${Error_Message_Login}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231028 20:32:55.741" level="INFO">${result} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20231028 20:32:55.714" endtime="20231028 20:32:55.741"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:55.714" endtime="20231028 20:32:55.741"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231028 20:32:55.741" endtime="20231028 20:32:59.592"/>
+</kw>
+<status status="PASS" starttime="20231028 20:32:50.588" endtime="20231028 20:32:59.593"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20231028 20:32:50.327" endtime="20231028 20:32:59.597"/>
+</suite>
+<status status="PASS" starttime="20231028 20:32:50.324" endtime="20231028 20:32:59.603"/>
+</suite>
+<status status="PASS" starttime="20231028 20:32:50.295" endtime="20231028 20:32:59.607"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="testDemo1">RobotFramework.Tests.testDemo1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

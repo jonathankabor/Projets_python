@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231029 22:14:07.047" rpa="false" schemaversion="4">
+<suite id="s1" name="testDemo2" source="C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\tests\testDemo2.robot">
+<test id="s1-t1" name="Validate Cards display in the Shopping Page" line="27">
+<kw name="open the browser with the Mortgage payment url" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231029 22:14:07.754" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20231029 22:14:07.753" endtime="20231029 22:14:10.516"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:07.751" endtime="20231029 22:14:10.518"/>
+</kw>
+<kw name="open the browser with the Mortgage payment url">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231029 22:14:10.521" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20231029 22:14:10.519" endtime="20231029 22:14:13.399"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:10.518" endtime="20231029 22:14:13.400"/>
+</kw>
+<kw name="Input Username">
+<arg>rahulshettyacademy</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 22:14:13.403" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231029 22:14:13.401" endtime="20231029 22:14:13.771"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:13.400" endtime="20231029 22:14:13.771"/>
+</kw>
+<kw name="Input Password">
+<arg>learning</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 22:14:13.775" level="INFO">Typing text 'learning' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231029 22:14:13.773" endtime="20231029 22:14:13.959"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:13.771" endtime="20231029 22:14:13.960"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231029 22:14:13.962" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20231029 22:14:13.961" endtime="20231029 22:14:14.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231029 22:14:14.086" endtime="20231029 22:14:17.566"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:13.960" endtime="20231029 22:14:17.567"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231029 22:14:17.567" endtime="20231029 22:14:17.610"/>
+</kw>
+<kw name="Close Browser session" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231029 22:14:17.612" endtime="20231029 22:14:20.041"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:17.611" endtime="20231029 22:14:20.042"/>
+</kw>
+<status status="PASS" starttime="20231029 22:14:07.749" endtime="20231029 22:14:20.042"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20231029 22:14:07.054" endtime="20231029 22:14:20.044"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo2">testDemo2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231029 22:14:07.746" level="ERROR">Error in file 'C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\tests\testDemo2.robot' on line 6: Error in file 'C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\tests\resource.robot' on line 21: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>
