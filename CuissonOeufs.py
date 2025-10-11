@@ -1,4 +1,5 @@
 import time
+import beepy
 
 """
    Votre programme proposera 3 options :
@@ -83,6 +84,7 @@ def cuisson_oeufs_decompte():
        
     
 print("\n C'est prêt ! Vos oeufs sont cuits. Bon appétit")
+beepy.beep(sound="ping")
     
 while True:
     if choix == '1':
