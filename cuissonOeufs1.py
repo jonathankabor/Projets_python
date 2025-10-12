@@ -24,8 +24,13 @@ print("Cuisson des oeufs")
 print("1 - Oeufs à la coque : 3 minutes")
 print("2 - Oeufs mollets : 6 minutes")
 print("3 - Oeufs durs : 9 minutes")
-choix = input("Votre choix : ")
 
+while True:
+    choix = input("Votre choix : ")
+    if choix =='1' or choix =='2' or choix =='3':
+            break
+    print("ERREUR: Vous devez choisir 1, 2 ou 3\n")
+    
 duree = 0
 if choix == "1":
     duree = 12
