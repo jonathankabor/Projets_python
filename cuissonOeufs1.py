@@ -18,6 +18,7 @@ print(f"{min:02d}")
     
 """
 import time
+import beepy
 
 print("Cuisson des oeufs")
 print("1 - Oeufs à la coque : 3 minutes")
@@ -33,14 +34,23 @@ if choix == "2":
 if choix == "3":
     duree = 9 * 60
     
-while True:
+while duree > 0:
     for i in range(10):
         time.sleep(1)
-        duree -=1
         print(".", end="", flush=True)
-    
+        duree -=1
+        if duree <= 0:
+            break
+        
+        
+    if duree <= 0:
+            break
 
     min = duree//60 # division entière (pas de virgules)
     sec = duree-min*60
     print()
     print(f"Temps restant : {min:02d}:{sec:02d}, end="", flush=True")
+
+print()   
+print("cuisson terminée")
+beepy.beep(sound="ping")
