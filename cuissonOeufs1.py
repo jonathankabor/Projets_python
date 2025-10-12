@@ -18,7 +18,7 @@ print(f"{min:02d}")
     
 """
 import time
-import beepy
+import winsound
 
 print("Cuisson des oeufs")
 print("1 - Oeufs à la coque : 3 minutes")
@@ -28,7 +28,7 @@ choix = input("Votre choix : ")
 
 duree = 0
 if choix == "1":
-    duree = 3 * 60
+    duree = 12
 if choix == "2":
     duree = 6 * 60
 if choix == "3":
@@ -49,8 +49,11 @@ while duree > 0:
     min = duree//60 # division entière (pas de virgules)
     sec = duree-min*60
     print()
-    print(f"Temps restant : {min:02d}:{sec:02d}, end="", flush=True")
+    print(f"Temps restant : {min:02d}:{sec:02d}", end="", flush=True)
 
 print()   
 print("cuisson terminée")
-beepy.beep(sound="ping")
+frequency = 2500
+duration = 1000
+
+winsound.Beep(frequency, duration)
