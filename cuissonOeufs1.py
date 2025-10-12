@@ -34,5 +34,11 @@ if choix == "3":
     duree = 9 * 60
     
 while True:
-    time.sleep(1)
-    print(".", end="", flush=True)
+    for i in range(10):
+        time.sleep(1)
+        print(".", end="", flush=True)
+    print("")
+
+    duree = 100
+    min = duree//60 # division entière (pas de virgules)
+    sec = duree-min*60
