@@ -33,7 +33,7 @@ while True:
     
 duree = 0
 if choix == "1":
-    duree = 12
+    duree = 3 * 60
 if choix == "2":
     duree = 6 * 60
 if choix == "3":
