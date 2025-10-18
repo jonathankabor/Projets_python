@@ -7,14 +7,22 @@ import winsound
 # titre : "Oeufs ç la coque"
 # durée : 3*60
 
-cHOIX_CUISSON = (
+CHOIX_CUISSON = (
    ("Oeufs à la coque", 3*60), 
    ("Oeufs mollets", 6*60),
-   ("Oeufs durs", 9*60)    
+   ("Oeufs durs", 9*60),
+   ("Steak à point", 4*60 + 30)    
 )
 
-print("Cuisson des oeufs")
-print("1 - Oeufs à la coque : 3 minutes")
+
+
+print("Choix de la cuisson")
+index_choix = 1
+for choix_cuisson in CHOIX_CUISSON:
+   print(f"{index_choix} - {choix_cuisson[0]} : 3 minutes") 
+
+
+
 print("2 - Oeufs mollets : 6 minutes")
 print("3 - Oeufs durs : 9 minutes")
 
