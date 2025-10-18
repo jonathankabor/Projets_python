@@ -32,6 +32,18 @@ def temps_sec_en_str(t):
         r += f" {sec} {sec_unit}"
     return r
 
+def demander_valeur_numerique_min_max(min, max):
+    valeur = input("Rentrez une valeur entre {min} et {max : ")
+    try:
+        valeur_int = int(valeur)
+    except:
+        print("ERREUR: Vous devez rentrer une valeur numérique ")
+        return demander_valeur_numerique_min_max(min, max)
+    if not (min <= valeur_int <= max):
+        print(f"ERREUR: Vous devez rentrer une valeur numérique entre {min} et {max}")
+        return demander_valeur_numerique_min_max(min, max)
+    return valeur_int
+
 # Affichage du menu
 print("Choix de la cuisson")
 index_choix = 1
@@ -39,6 +51,7 @@ for choix_cuisson in CHOIX_CUISSON:
    print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson)}") 
    index_choix += 1
 
+choix = demander_valeur_numerique_min_max(1, len(CHOIX_CUISSON))
 
 # Choix utilisateur
 while True:
