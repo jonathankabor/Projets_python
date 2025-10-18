@@ -32,16 +32,15 @@ def temps_sec_en_str(t):
         r += f" {sec} {sec_unit}"
     return r
 
+# Affichage du menu
 print("Choix de la cuisson")
 index_choix = 1
 for choix_cuisson in CHOIX_CUISSON:
    print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson)}") 
+   index_choix += 1
 
 
-
-print("2 - Oeufs mollets : 6 minutes")
-print("3 - Oeufs durs : 9 minutes")
-
+# Choix utilisateur
 while True:
     choix = input("Votre choix : ")
     if choix =='1' or choix =='2' or choix =='3':
