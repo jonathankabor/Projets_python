@@ -11,7 +11,10 @@ CHOIX_CUISSON = (
    ("Oeufs à la coque", 3*60), 
    ("Oeufs mollets", 6*60),
    ("Oeufs durs", 9*60),
-   ("Steak à point", 4*60 + 30)    
+   ("Steak à point", 4*60 + 30),
+   ("Test1", 5),
+   ("Test2", 11),
+   ("Test3", 15),      
 )
 
 def temps_sec_en_str(t):
@@ -52,24 +55,12 @@ for choix_cuisson in CHOIX_CUISSON:
    index_choix += 1
 
 choix = demander_valeur_numerique_min_max(1, len(CHOIX_CUISSON))
+choix_cuisson = CHOIX_CUISSON[choix-1]
+duree = choix_cuisson[1]
 
-# Choix utilisateur
+    
 while True:
-    choix = input("Votre choix : ")
-    if choix =='1' or choix =='2' or choix =='3':
-            break
-    print("ERREUR: Vous devez choisir 1, 2 ou 3\n")
-    
-duree = 0
-if choix == "1":
-    duree = 3 * 60
-if choix == "2":
-    duree = 6 * 60
-if choix == "3":
-    duree = 9 * 60
-    
-while duree > 0:
-    for i in range(10):
+    for i in range(DUREE_PROGRESSION):
         time.sleep(1)
         print(".", end="", flush=True)
         duree -=1
