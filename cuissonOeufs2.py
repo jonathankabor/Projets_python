@@ -14,12 +14,28 @@ CHOIX_CUISSON = (
    ("Steak à point", 4*60 + 30)    
 )
 
-
+def temps_sec_en_str(t):
+    min = t//60 # division entière (pas de virgules)
+    sec = t-min*60
+    min_unit = "minutes"
+    sec_unit = "secondes"
+    if min == 1:
+        min_unit = "minute"
+    if sec == 1:
+        sec_unit = "seconde"
+    r = ""
+    if min > 0:
+        r += f"{min} {min_unit}" 
+    if sec > 0:
+        if len(r) > 0:
+            r += " "
+        r += f" {sec} {sec_unit}"
+    return r
 
 print("Choix de la cuisson")
 index_choix = 1
 for choix_cuisson in CHOIX_CUISSON:
-   print(f"{index_choix} - {choix_cuisson[0]} : 3 minutes") 
+   print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson)}") 
 
 
 
