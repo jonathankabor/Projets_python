@@ -51,12 +51,14 @@ def demander_valeur_numerique_min_max(min, max):
 print("Choix de la cuisson")
 index_choix = 1
 for choix_cuisson in CHOIX_CUISSON:
-   print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson)}") 
+   print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson[1])}") 
    index_choix += 1
 
 choix = demander_valeur_numerique_min_max(1, len(CHOIX_CUISSON))
+
 choix_cuisson = CHOIX_CUISSON[choix-1]
 duree = choix_cuisson[1]
+print(f"{index_choix} - {choix_cuisson[0]} : {temps_sec_en_str(choix_cuisson[1])}", end="", flush=True)
 
     
 while True:
