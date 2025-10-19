@@ -68,10 +68,8 @@ while True:
         duree -=1
         if duree <= 0:
             break
-        
-     
-    #if duree <= 0:
-            #break
+    if duree <= 0:
+            break
 
     min = duree//60 # division entière (pas de virgules)
     sec = duree-min*60
