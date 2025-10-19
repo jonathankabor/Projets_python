@@ -36,7 +36,7 @@ def temps_sec_en_str(t):
     return r
 
 def demander_valeur_numerique_min_max(min, max):
-    valeur = input("Rentrez une valeur entre {min} et {max : ")
+    valeur = input(f"Rentrez une valeur entre {min} et {max} : ")
     try:
         valeur_int = int(valeur)
     except:
@@ -69,14 +69,15 @@ while True:
         if duree <= 0:
             break
         
-        
-    if duree <= 0:
-            break
+     
+    #if duree <= 0:
+            #break
 
     min = duree//60 # division entière (pas de virgules)
     sec = duree-min*60
     print()
     print(f"Temps restant : {min:02d}:{sec:02d}", end="", flush=True)
+
 
 print()   
 print("cuisson terminée")
