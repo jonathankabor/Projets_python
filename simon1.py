@@ -20,7 +20,8 @@ for i in range(4):
 
 clear_screen() 
 print("Bienvenue dans le jeu du Simon") 
- 
+
+score = 0
 while True:
     print("Retenez la séquence")
     time.sleep(1)
@@ -28,7 +29,9 @@ while True:
     time.sleep(3)
     clear_screen()
 
-# input
+    seq_utilisateur : input("Rentrez la séquence: ")
+    if seq_utilisateur == sequence:
+        score +=1
 
     chiffre = random.randint(0,9)
     sequence += str(chiffre)
