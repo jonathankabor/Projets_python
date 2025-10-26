@@ -29,9 +29,16 @@ while True:
     time.sleep(3)
     clear_screen()
 
-    seq_utilisateur : input("Rentrez la séquence: ")
+    seq_utilisateur = input("Rentrez la séquence: ")
     if seq_utilisateur == sequence:
         score +=1
+    else:
+        break
 
     chiffre = random.randint(0,9)
     sequence += str(chiffre)
+    clear_screen()
+    
+print("Mauvaise réponse")
+print(f"La réponse était {sequence}")
+print(f"Votre score final est : {score}")
