@@ -10,13 +10,25 @@ def clear_screen():
         os.system('cls')
         
         
-print("Bienvenue dans le jeu du Simon")
+
 
 # Génération de la séquence initiale
 sequence = ""
 for i in range(4):
     chiffre = random.randint(0,9)
     sequence += str(chiffre)
-    
-print(sequence)
 
+clear_screen() 
+print("Bienvenue dans le jeu du Simon") 
+ 
+while True:
+    print("Retenez la séquence")
+    time.sleep(1)
+    print(sequence)
+    time.sleep(3)
+    clear_screen()
+
+# input
+
+    chiffre = random.randint(0,9)
+    sequence += str(chiffre)
