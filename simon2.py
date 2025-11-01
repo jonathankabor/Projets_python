@@ -35,21 +35,21 @@ NIVEAUX_DIFFICULTE = (
         "longueur_seq_initiale": 3,
         "duree_memorisation_sec": 4,
         "increment_sequence": 1,
-        "nombre_essais": 3,
+        "nombre_essais": 2,
     },
     {
         "titre": "Normal",
         "longueur_seq_initiale": 4,
         "duree_memorisation_sec": 3,
         "increment_sequence": 1,
-        "nombre_essais": 2,
+        "nombre_essais": 1,
     },
     {
         "titre": "Difficile",
         "longueur_seq_initiale": 5,
         "duree_memorisation_sec": 2,
         "increment_sequence": 2,
-        "nombre_essais": 1,
+        "nombre_essais": 0,
     }
 )
 
@@ -117,7 +117,7 @@ while True:
         print("Bonne reponse !")
     else:
         nb_essais_restants -=1
-        if nb_essais_restants <= 0:
+        if nb_essais_restants < 0:
             break
         print("Mauvaise réponse réessayez")
     time.sleep(1)
