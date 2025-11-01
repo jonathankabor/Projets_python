@@ -50,7 +50,7 @@ NIVEAUX_DIFFICULTE = (
         "duree_memorisation_sec": 2,
         "increment_sequence": 2,
         "nombre_essais": 0,
-    },
+    }
 )
 
 def clear_screen():
@@ -59,7 +59,29 @@ def clear_screen():
     else:
         os.system('cls')
         
+def demander_valeur_numerique_min_max(min, max):
+    valeur = input(f"Rentrez une valeur entre {min} et {max} : ")
+    try:
+        valeur_int = int(valeur)
+    except:
+        print("ERREUR: Vous devez rentrer une valeur numérique ")
+        return demander_valeur_numerique_min_max(min, max)
+    if not (min <= valeur_int <= max):
+        print(f"ERREUR: Vous devez rentrer une valeur numérique entre {min} et {max}")
+        return demander_valeur_numerique_min_max(min, max)
+    return valeur_int
         
+def choix_niveau_difficulte(niveaux_difficulte):
+    print("Choisissez votre niveau")
+    index = 1
+    for niveau in niveaux_difficulte:
+        print(f"{index} - {niveau['titre']}")
+        index +=1
+    choix = demander_valeur_numerique_min_max(1, len(niveaux_difficulte))
+    return niveaux_difficulte[choix-1]
+# Choisir le niveau de difficulté
+
+niveau_difficulte_dict = choix_niveau_difficulte(NIVEAUX_DIFFICULTE)       
 
 
 # Génération de la séquence initiale
