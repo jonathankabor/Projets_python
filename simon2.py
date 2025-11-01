@@ -29,6 +29,29 @@ import random
 import time
 import os
 
+NIVEAUX_DIFFICULTE = (
+    {
+        "titre": "Facile",
+        "longueur_initiale": 3,
+        "duree_memorisation_sec": 4,
+        "increment_sequence": 1,
+        "nombre_essais": 2,
+    },
+    {
+        "titre": "Normal",
+        "longueur_initiale": 4,
+        "duree_memorisation_sec": 3,
+        "increment_sequence": 1,
+        "nombre_essais": 1,
+    },
+    {
+        "titre": "Difficile",
+        "longueur_initiale": 5,
+        "duree_memorisation_sec": 2,
+        "increment_sequence": 2,
+        "nombre_essais": 0,
+    },
+)
 
 def clear_screen():
     if(os.name == 'posix'):
