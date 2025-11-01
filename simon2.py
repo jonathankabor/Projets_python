@@ -32,21 +32,21 @@ import os
 NIVEAUX_DIFFICULTE = (
     {
         "titre": "Facile",
-        "longueur_initiale": 3,
+        "longueur_seq_initiale": 3,
         "duree_memorisation_sec": 4,
         "increment_sequence": 1,
         "nombre_essais": 2,
     },
     {
         "titre": "Normal",
-        "longueur_initiale": 4,
+        "longueur_seq_initiale": 4,
         "duree_memorisation_sec": 3,
         "increment_sequence": 1,
         "nombre_essais": 1,
     },
     {
         "titre": "Difficile",
-        "longueur_initiale": 5,
+        "longueur_seq_initiale": 5,
         "duree_memorisation_sec": 2,
         "increment_sequence": 2,
         "nombre_essais": 0,
@@ -79,26 +79,31 @@ def choix_niveau_difficulte(niveaux_difficulte):
         index +=1
     choix = demander_valeur_numerique_min_max(1, len(niveaux_difficulte))
     return niveaux_difficulte[choix-1]
-# Choisir le niveau de difficulté
 
+def generer_sequence(n):
+    sequence = ""
+    for i in range(n):
+        chiffre = random.randint(0,9)
+        sequence += str(chiffre)
+    return sequence
+    
+
+# Choisir le niveau de difficulté
 niveau_difficulte_dict = choix_niveau_difficulte(NIVEAUX_DIFFICULTE)       
 
 
 # Génération de la séquence initiale
-sequence = ""
-for i in range(4):
-    chiffre = random.randint(0,9)
-    sequence += str(chiffre)
+sequence = generer_sequence(niveau_difficulte_dict["longueur_seq_initiale"])
 
 clear_screen() 
-print("Bienvenue dans le jeu du Simon") 
+print(f"Début du jeu - niveau {niveau_difficulte_dict['titre']}") 
 
 score = 0
 while True:
     print("Retenez la séquence")
     time.sleep(1)
     print(sequence)
-    time.sleep(3)
+    time.sleep(niveau_difficulte_dict["duree_memorisation_sec"])
     clear_screen()
 
     seq_utilisateur = input("Rentrez la séquence: ")
@@ -107,8 +112,7 @@ while True:
     else:
         break
 
-    chiffre = random.randint(0,9)
-    sequence += str(chiffre)
+    sequence += generer_sequence(niveau_difficulte_dict["increment_sequence"])
     clear_screen()
     
 print("Mauvaise réponse")
