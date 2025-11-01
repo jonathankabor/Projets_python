@@ -35,21 +35,21 @@ NIVEAUX_DIFFICULTE = (
         "longueur_seq_initiale": 3,
         "duree_memorisation_sec": 4,
         "increment_sequence": 1,
-        "nombre_essais": 2,
+        "nombre_essais": 3,
     },
     {
         "titre": "Normal",
         "longueur_seq_initiale": 4,
         "duree_memorisation_sec": 3,
         "increment_sequence": 1,
-        "nombre_essais": 1,
+        "nombre_essais": 2,
     },
     {
         "titre": "Difficile",
         "longueur_seq_initiale": 5,
         "duree_memorisation_sec": 2,
         "increment_sequence": 2,
-        "nombre_essais": 0,
+        "nombre_essais": 1,
     }
 )
 
@@ -95,6 +95,8 @@ niveau_difficulte_dict = choix_niveau_difficulte(NIVEAUX_DIFFICULTE)
 # Génération de la séquence initiale
 sequence = generer_sequence(niveau_difficulte_dict["longueur_seq_initiale"])
 
+nb_essais_restants = niveau_difficulte_dict["nombre_essais"]
+
 clear_screen() 
 print(f"Début du jeu - niveau {niveau_difficulte_dict['titre']}") 
 
@@ -106,13 +108,19 @@ while True:
     time.sleep(niveau_difficulte_dict["duree_memorisation_sec"])
     clear_screen()
 
+    print(f"Nombre d'essais resteants : {nb_essais_restants}")
+    print(f"Votre score  : {score}")
     seq_utilisateur = input("Rentrez la séquence: ")
     if seq_utilisateur == sequence:
         score +=1
+        sequence += generer_sequence(niveau_difficulte_dict["increment_sequence"])
     else:
-        break
+        nb_essais_restants -=1
+        if nb_essais_restants <= 0:
+            break
+        print("Mauvaise réponse réessayez")
 
-    sequence += generer_sequence(niveau_difficulte_dict["increment_sequence"])
+    
     clear_screen()
     
 print("Mauvaise réponse")
