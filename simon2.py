@@ -114,13 +114,13 @@ while True:
     if seq_utilisateur == sequence:
         score +=1
         sequence += generer_sequence(niveau_difficulte_dict["increment_sequence"])
+        print("Bonne reponse !")
     else:
         nb_essais_restants -=1
         if nb_essais_restants <= 0:
             break
         print("Mauvaise réponse réessayez")
-
-    
+    time.sleep(1)
     clear_screen()
     
 print("Mauvaise réponse")
