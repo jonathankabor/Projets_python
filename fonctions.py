@@ -21,3 +21,23 @@ print("La personne 1 est", nom2, "son age est", age2, "ans")
 print("le nom comporte", len(nom2), "lettres")
 
 """
+
+"""
+# définition de la fonction
+def afficher_infos_personne_toto_20():
+    print("La personne est toto, son age est 20 ans")
+    print("Le nom comporte 4 caractères")
+    
+def afficher_infos_personne_titi_25():
+    print("La personne est titi, son age est 30 ans")
+    print("Le nom comporte 4 caractères")
+
+print("Début du programme")
+
+afficher_infos_personne_toto_20()
+afficher_infos_personne_titi_25()
+
+print("Fin du programme")
+
+"""
+# Les paramètres d'une fonction
