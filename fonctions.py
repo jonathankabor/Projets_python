@@ -40,4 +40,36 @@ afficher_infos_personne_titi_25()
 print("Fin du programme")
 
 """
+
+"""
 # Les paramètres d'une fonction
+
+def afficher_infos_personne(nom, age):
+    print("La personne est", nom + ", son age est", age, "ans")
+    print("Le nom comporte", len(nom),  "caractères")
+    
+print("Début du programme")
+
+afficher_infos_personne("Emilie", "20")
+
+print("Fin du programme")
+
+"""
+
+# Les paramètres optionnels
+
+def afficher_infos_personne(nom="", age=0):
+    if nom == "":
+        print("Vous n'avez pas donné de nom")
+    else:
+        if age == 0:
+            print("La personne est", nom)
+        else:
+            print("La personne est", nom + ", son age est", age, "ans")
+            print("Le nom comporte", len(nom),  "caractères")
+        
+print("Début du programme")
+
+afficher_infos_personne("Toto", 20)
+
+print("Fin du programme")
