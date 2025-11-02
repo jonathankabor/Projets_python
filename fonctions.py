@@ -77,6 +77,7 @@ print("Fin du programme")
 
 """
 
+"""
 # return (pas obligatoire)
 # --> sortir de la fonction
 # --> renvoyer une valeur (pas obligatoire)
@@ -120,3 +121,6 @@ else:
     print("il est mineur")
 
 print("Fin du programme")
+
+"""
+
