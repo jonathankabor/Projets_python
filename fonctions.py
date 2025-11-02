@@ -124,3 +124,18 @@ print("Fin du programme")
 
 """
 
+# implémenter recuperer_et_afficher_infos_personne
+# parametre : numero_personne
+# rien retourner
+# input / print
+
+def recuperer_et_afficher_infos_personne(numero_personne):
+    nom = input("Nom de la personne " + str(numero_personne) + ": ")
+    age = input("Age de la personne " + str(numero_personne) + ": ")
+    print("La personne " + str(numero_personne), "est", nom, "son age est", age, "ans")
+    print("le nom comporte", len(nom), "caractères")
+
+ 
+recuperer_et_afficher_infos_personne(1)
+recuperer_et_afficher_infos_personne(2)
+recuperer_et_afficher_infos_personne(3)
