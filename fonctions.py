@@ -124,6 +124,12 @@ print("Fin du programme")
 
 """
 
+"""
+recuperer_et_afficher_infos_personne
+    -> recuperer_infos_personne()
+    -> afficher_infos_personne(nom, age)
+
+"""
 # implémenter recuperer_et_afficher_infos_personne
 # parametre : numero_personne
 # rien retourner
