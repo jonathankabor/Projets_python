@@ -128,18 +128,24 @@ print("Fin du programme")
 recuperer_et_afficher_infos_personne
     -> recuperer_infos_personne()
     -> afficher_infos_personne(nom, age)
+    -> est_majeur
 
 """
+
+
+def afficher_infos_personne(numero_personne,nom, age):
+    print("La personne ", numero_personne,  "est", nom, "son age est", age, "ans")
+    print("le nom comporte", len(nom), "caractères")
 # implémenter recuperer_et_afficher_infos_personne
 # parametre : numero_personne
 # rien retourner
 # input / print
 
 def recuperer_et_afficher_infos_personne(numero_personne):
-    nom = input("Nom de la personne " + str(numero_personne) + ": ")
-    age = input("Age de la personne " + str(numero_personne) + ": ")
-    print("La personne " + str(numero_personne), "est", nom, "son age est", age, "ans")
-    print("le nom comporte", len(nom), "caractères")
+    nom_personne = input("Nom de la personne " + str(numero_personne) + ": ")
+    age_personne = input("Age de la personne " + str(numero_personne) + ": ")
+    afficher_infos_personne(numero_personne, nom_personne, age_personne)
+    
 
 
 nb_personnes = 3
