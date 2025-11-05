@@ -152,3 +152,4 @@ nb_personnes = 3
 
 for i in range(nb_personnes): # 0 1 2
     recuperer_et_afficher_infos_personne(i+1)
+afficher_infos_personne("007", "James", "40")
