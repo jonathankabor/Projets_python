@@ -133,7 +133,13 @@ recuperer_et_afficher_infos_personne
 """
 
 
-def afficher_infos_personne(numero_personne,nom, age):
+def recuperer_infos_personne(numero_personne):
+    nom_personne = input("Nom de la personne " + str(numero_personne) + ": ")
+    age_personne = input("Age de la personne " + str(numero_personne) + ": ")
+    return nom_personne
+    
+    
+def afficher_infos_personne(numero_personne,nom, age=0):
     print("La personne ", numero_personne,  "est", nom, "son age est", age, "ans")
     print("le nom comporte", len(nom), "caractères")
 # implémenter recuperer_et_afficher_infos_personne
@@ -142,9 +148,8 @@ def afficher_infos_personne(numero_personne,nom, age):
 # input / print
 
 def recuperer_et_afficher_infos_personne(numero_personne):
-    nom_personne = input("Nom de la personne " + str(numero_personne) + ": ")
-    age_personne = input("Age de la personne " + str(numero_personne) + ": ")
-    afficher_infos_personne(numero_personne, nom_personne, age_personne)
+    nom = recuperer_infos_personne(numero_personne)
+    afficher_infos_personne(numero_personne, nom)
     
 
 
