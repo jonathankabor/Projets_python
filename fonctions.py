@@ -128,7 +128,7 @@ print("Fin du programme")
 recuperer_et_afficher_infos_personne
     -> recuperer_infos_personne()
     -> afficher_infos_personne(nom, age)
-    -> 
+    -> est_majeur
 
 """
 
