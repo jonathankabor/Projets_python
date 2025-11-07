@@ -148,7 +148,7 @@ def est_majeur(age: int):
 def recuperer_infos_personne(numero_personne):
     nom_personne = input("Nom de la personne " + str(numero_personne) + ": ")
     age_personne = input("Age de la personne " + str(numero_personne) + ": ")
-    return nom_personne, age_personne
+    return nom_personne, int(age_personne)
     
     
 def afficher_infos_personne(numero_personne,nom, age: int):
@@ -157,7 +157,7 @@ def afficher_infos_personne(numero_personne,nom, age: int):
     if est_majeur(age):
         print("il est majeur")
     else:
-        print("il est majeur")
+        print("il est mineur")
         
 # implémenter recuperer_et_afficher_infos_personne
 # parametre : numero_personne
@@ -172,6 +172,7 @@ def recuperer_et_afficher_infos_personne(numero_personne):
 
 nb_personnes = 3
 
-#for i in range(nb_personnes): # 0 1 2
-    #recuperer_et_afficher_infos_personne(i+1)
-afficher_infos_personne("007", "James", "40")
+for i in range(nb_personnes): # 0 1 2
+    recuperer_et_afficher_infos_personne(i+1)
+    
+afficher_infos_personne("007", "James", 40)
