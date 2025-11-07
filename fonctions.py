@@ -132,6 +132,15 @@ recuperer_et_afficher_infos_personne
 
 """
 
+def est_majeur(age):
+    if age <= 0:
+        return False
+    # Vrai ou Faux (True / False)
+    # si l'age >= 18 => True sinon False
+    if age >= 18:
+        return True
+    return False
+
 
 def recuperer_infos_personne(numero_personne):
     nom_personne = input("Nom de la personne " + str(numero_personne) + ": ")
