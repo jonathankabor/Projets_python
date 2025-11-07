@@ -132,7 +132,10 @@ recuperer_et_afficher_infos_personne
 
 """
 
-def est_majeur(age):
+# str: chaines de caractères
+# int : nombre entiers
+
+def est_majeur(age: int):
     if age <= 0:
         return False
     # Vrai ou Faux (True / False)
@@ -148,7 +151,7 @@ def recuperer_infos_personne(numero_personne):
     return nom_personne, age_personne
     
     
-def afficher_infos_personne(numero_personne,nom, age):
+def afficher_infos_personne(numero_personne,nom, age: int):
     print("La personne ", numero_personne,  "est", nom, "son age est", age, "ans")
     print("le nom comporte", len(nom), "caractères")
     if est_majeur(age):
