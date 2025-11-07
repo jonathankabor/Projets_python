@@ -151,6 +151,11 @@ def recuperer_infos_personne(numero_personne):
 def afficher_infos_personne(numero_personne,nom, age):
     print("La personne ", numero_personne,  "est", nom, "son age est", age, "ans")
     print("le nom comporte", len(nom), "caractères")
+    if est_majeur(age):
+        print("il est majeur")
+    else:
+        print("il est majeur")
+        
 # implémenter recuperer_et_afficher_infos_personne
 # parametre : numero_personne
 # rien retourner
@@ -164,6 +169,6 @@ def recuperer_et_afficher_infos_personne(numero_personne):
 
 nb_personnes = 3
 
-for i in range(nb_personnes): # 0 1 2
-    recuperer_et_afficher_infos_personne(i+1)
+#for i in range(nb_personnes): # 0 1 2
+    #recuperer_et_afficher_infos_personne(i+1)
 afficher_infos_personne("007", "James", "40")
