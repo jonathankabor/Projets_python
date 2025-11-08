@@ -42,6 +42,8 @@ else:
 """
 
 def poser_question(question, r1, r2, r3, r4, choix_bonne_reponse):
+    global score
+    print("score:", score)
     print("QUESTION") 
     print(" " + question)
     print(" (a)", r1)
@@ -51,9 +53,15 @@ def poser_question(question, r1, r2, r3, r4, choix_bonne_reponse):
     reponse = input("Votre réponse :")
     if reponse == choix_bonne_reponse:
         print("Bonne réponse")
+        score +=1
     else:
         print("Mausaive réponse")
     print()
-    
+
+
+score = 0
+
 poser_question("Quelle est la capitale de la france ?", "Marseille", "Nice", "Paris", "Nantes", "c")
 poser_question("Quelle est la capitale de l'italie ?", "Rome", "Venise", "Pise", "Florence", "a")
+
+print("Score final :", score)
