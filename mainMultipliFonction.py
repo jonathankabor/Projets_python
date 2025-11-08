@@ -15,10 +15,13 @@ erreur : si min > max => erreur
 
 
 
-def afficher_table_multiplication(n):
-    min = 1
-    max = 10
+def afficher_table_multiplication(n, min = 1, max = 10):
+    if min > max:
+        print("ERREUR : Le min est inférieur au max")
+        return
     for i in range(min, max+1):
         print(i, "x", n, "=", i*n)
         
-afficher_table_multiplication(4)
+        
+afficher_table_multiplication(4, 1, 10)
+print("----------- fin de la table -----------")
