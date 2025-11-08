@@ -42,15 +42,18 @@ else:
 """
 
 def poser_question(question, r1, r2, r3, r4, choix_bonne_reponse):
-    print(question)  
-    print(r1)
-    print(r2)
-    print(r3)
-    print(r4)
+    print("QUESTION") 
+    print(" " + question)
+    print(" (a)", r1)
+    print(" (b)",r2)
+    print(" (c)",r3)
+    print(" (d)",r4)
     reponse = input("Votre réponse :")
     if reponse == choix_bonne_reponse:
         print("Bonne réponse")
     else:
         print("Mausaive réponse")
+    print()
     
-poser_question("Question : Quelle est la capitale de la france ?", "(a) Marseille", "(b) Nice", "(c) Paris", "(d) Nantes", "c")
+poser_question("Quelle est la capitale de la france ?", "Marseille", "Nice", "Paris", "Nantes", "c")
+poser_question("Quelle est la capitale de l'italie ?", "Rome", "Venise", "Pise", "Florence", "a")
