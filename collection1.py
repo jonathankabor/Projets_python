@@ -24,6 +24,7 @@
 
 # ---------------------------- Les Listes -------------------------------
 
+"""
 personnes = ["Mélanie", "Jean", "Martin", "Alice"]
 
 nouvelle_personne = "David"
@@ -48,3 +49,27 @@ print(test)
 
         
 # afficher_personnes(personnes)
+
+"""
+
+# ---------------------------- Fonctions et Tuples -------------------------------
+
+def obtenir_informations():
+    return "Mélanie", 37, 1.60
+
+def afficher_informations(nom, age, taille):
+    print(f"Informations: Nom: {nom}, age: {age}, taille: {taille}")
+
+infos = obtenir_informations()
+afficher_informations(*infos)
+
+print(infos)
+print(*infos) # unpack tuple
+print(infos[0], infos[1], infos[2])
+
+# print("nom: " + infos[0])
+# print("age: " + str(infos[1]))
+# print("taille: " + str(infos[2]))
+
+# nom, age, taille = obtenir_informations()
+# afficher_informations(nom, age, taille)
