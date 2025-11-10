@@ -54,6 +54,8 @@ print(test)
 
 # ---------------------------- Fonctions et Tuples -------------------------------
 
+"""
+
 def obtenir_informations():
     return "Mélanie", 37, 1.60
 
@@ -73,3 +75,17 @@ print(infos[0], infos[1], infos[2])
 
 # nom, age, taille = obtenir_informations()
 # afficher_informations(nom, age, taille)
+
+"""
+
+# ---------------------------- Les Slices -------------------------------
+
+personnes = ("Mélanie", "Jean", "Martin", "Alice", "Pierre", "Paul")
+
+# [start:stop:step]
+
+#for i in personnes[::2]:
+#   print(i)
+
+nom = "Jean"
+print(nom[::-1])
