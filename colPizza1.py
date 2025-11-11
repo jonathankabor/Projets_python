@@ -4,25 +4,27 @@
 
 # --------------- LISTE DES PIZZAS (4) -----------------------
 
-from audioop import reverse
 
 
 # def tri_personnalise(e):
 #    return len(e)
 
-def afficher_pizza(collection):
+def afficher_pizza(collection, n_premiers_elements=-1):
 #    collection.sort(reverse= True, key=tri_personnalise)
-    nb_pizzas = len(collection)
+    c = collection
+    if not n_premiers_elements == -1:
+        c = collection[: n_premiers_elements]
+    nb_pizzas = len(c)
     if nb_pizzas == 0:
         print("AUCUNE PIZZA")
         return
         
     print(f"---- LISTE DES PIZZAS ({(nb_pizzas)})----")
-    for i in collection:
+    for i in c:
         print(i)
     print()
-    print("Première pizza: " + collection[0])
-    print("Dernière pizza: " + collection[-1])
+    print("Première pizza: " + c[0])
+    print("Dernière pizza: " + c[-1])
         
 
 def ajouter_pizza_utilisateur(collection):
@@ -44,7 +46,7 @@ def ajouter_pizza_utilisateur(collection):
 pizzas = ["4 fromages", "végétarienne", "hawai", "calzone"]
 #vide = ()
 ajouter_pizza_utilisateur(pizzas)
-afficher_pizza(pizzas)
+afficher_pizza(pizzas, 3)
 
 # lower() -> minuscules
 # upper() -> majuscules
