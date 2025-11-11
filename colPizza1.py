@@ -20,10 +20,24 @@ def afficher_pizza(collection):
 
 def ajouter_pizza_utilisateur(collection):
     p = input("Pizza à ajouter: ")
-    collection.append(p)
+    # if pizza_existe(p, collection):
+    if p.lower() in collection:
+        print("ERREUR : Cette pizza existe déjà")
+    else:
+        collection.append(p)
           
-    
+
+# def pizza_existe(e, collection):
+#    for i in collection:
+#        if i == e:
+#            return True
+#    return False
+
+ 
 pizzas = ["4 fromages", "végétarienne", "hawai", "calzone"]
 #vide = ()
 ajouter_pizza_utilisateur(pizzas)
 afficher_pizza(pizzas)
+
+# lower() -> minuscules
+# upper() -> majuscules
