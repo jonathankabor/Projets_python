@@ -17,8 +17,13 @@ def afficher_pizza(collection):
     print("Première pizza: " + collection[0])
     print("Dernière pizza: " + collection[-1])
         
-            
+
+def ajouter_pizza_utilisateur(collection):
+    p = input("Pizza à ajouter: ")
+    collection.append(p)
+          
     
-pizzas = ("4 fromages", "végétarienne", "hawai", "calzone")
-vide = ()
-afficher_pizza(vide)
+pizzas = ["4 fromages", "végétarienne", "hawai", "calzone"]
+#vide = ()
+ajouter_pizza_utilisateur(pizzas)
+afficher_pizza(pizzas)
