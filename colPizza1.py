@@ -4,7 +4,14 @@
 
 # --------------- LISTE DES PIZZAS (4) -----------------------
 
+from audioop import reverse
+
+
+# def tri_personnalise(e):
+#    return len(e)
+
 def afficher_pizza(collection):
+#    collection.sort(reverse= True, key=tri_personnalise)
     nb_pizzas = len(collection)
     if nb_pizzas == 0:
         print("AUCUNE PIZZA")
