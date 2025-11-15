@@ -5,12 +5,13 @@ def poser_question(question):
     global score
     print("QUESTION") 
     print(" " + question[0])
-    print(" ", choix[0])
-    print(" ",choix[1])
-    print(" ",choix[2])
-    print(" ",choix[3])
-    reponse = input("Votre réponse :")
-    if reponse.lower() == bonne_reponse.lower():
+    for i in range(len(choix)):
+        print(" ", i+1, "-", choix[i])
+    
+    reponse_str = input("Votre réponse (entre 1 et " + str(len(choix)) + ") :")
+    reponse_int = int(reponse_str)
+    
+    if choix[reponse_int-1].lower() == bonne_reponse.lower():
         print("Bonne réponse")
         score +=1
     else:
@@ -31,7 +32,7 @@ score = 0
         
 '''
 
-question1 = ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes"), "Paris")
+question1 = ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
 question2 = ("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome")
 
 '''
