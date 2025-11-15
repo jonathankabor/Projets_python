@@ -1,3 +1,15 @@
+def demander_reponse_numerique_utilisateur(min, max):
+    reponse_str = input("Votre réponse (entre" + str(min) + "et " + str(max) + ") :")
+    try:
+        reponse_int = int(reponse_str)
+        if min <= reponse_int <= max:
+            return reponse_int
+        print("ERREUR : Vous devez rentrer un nombre entre", min, "et", max)
+    except:
+        print("ERREUR : Veuillez rentrer uniquement des chiffres")
+    return demander_reponse_numerique_utilisateur(min, max)
+
+
 def poser_question(question):
     # titre_question, r1, r2, r3, r4, choix_bonne_reponse
     choix = question[1]
@@ -7,16 +19,17 @@ def poser_question(question):
     print(" " + question[0])
     for i in range(len(choix)):
         print(" ", i+1, "-", choix[i])
-    
-    reponse_str = input("Votre réponse (entre 1 et " + str(len(choix)) + ") :")
-    reponse_int = int(reponse_str)
-    
+        
+    print() 
+    reponse_int = demander_reponse_numerique_utilisateur(1, len(choix))
     if choix[reponse_int-1].lower() == bonne_reponse.lower():
         print("Bonne réponse")
         score +=1
     else:
         print("Mausaive réponse")
     print()
+    
+
 
 
 score = 0
