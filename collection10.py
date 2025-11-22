@@ -2,7 +2,7 @@
 # Index, find et count
 
 
-#          0        1        2            3         4
+#          0        1        2            3         4        5
 noms = ["Jean", "Sophie", "Martin", "Christophe", "Zoe", "Martin"]
 
 
