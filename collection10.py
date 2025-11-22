@@ -1,0 +1,28 @@
+# LES COLLECTIONS : LISTES / TUPLES
+# Index, find et count
+
+
+#          0        1        2            3         4
+noms = ["Jean", "Sophie", "Martin", "Christophe", "Zoe", "Martin"]
+
+
+
+element_cherche = "Martin"
+nb_occurences = noms.count(element_cherche)
+print("nb_occurences", nb_occurences)
+if nb_occurences > 0:
+    index_occurence = 0
+    for i in range(nb_occurences):
+        index_occurence = noms.index(element_cherche, index_occurence)
+        print(element_cherche, "Trouvé à", index_occurence)
+        index_occurence += 1
+else:
+    print("L'élément n'est pas dans la collection")
+
+
+"""
+a = "Jean-Martin-Toto"
+i = a.find("Martin")
+print(i)
+
+"""
