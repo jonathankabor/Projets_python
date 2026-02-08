@@ -14,20 +14,25 @@
 
 # ----- DEFINITION -----
 class Personne:
-    def __init__(self, nom): 
+    def __init__(self): 
         self.nom = nom   # crée une variable d'instance : nom
         print("Constructeur personne " + nom)   
         
     def SePresenter(self):
         print("Bonjour, je m'appelle " + self.nom)
+        
+#   def AutreFonction():
+€#       print("AutreFonction")
 
 
 
 # ----- UTILISATION -----
 personne1 = Personne("Jean")  # Je cree une personne
-personne2 = Personne("Paul")  # Je cree une personne
+# personne2 = Personne("Paul")  # Je cree une personne
 
 # Personne.SePresenter(personne1)
 personne1.SePresenter()
-personne2.SePresenter()
+# personne2.SePresenter() # méthode d'instance
+
+# personne.AutreFonction()  # méthode de classe
 
