@@ -38,3 +38,4 @@ personne2.SePresenter() # méthode d'instance
 # personne.AutreFonction()  # méthode de classe
 
 
+
