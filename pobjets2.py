@@ -14,12 +14,14 @@
 
 # ----- DEFINITION -----
 class Personne:
-    def __init__(self, nom): 
+    def __init__(self, nom: str, age: int): 
         self.nom = nom   # crée une variable d'instance : nom
+        self.age = age
         print("Constructeur personne " + nom)   
         
     def SePresenter(self):
-        print("Bonjour, je m'appelle " + self.nom)
+        # Bonjour, je m'appelle Jean, j'ai 30 ans
+        print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
         
 #   def AutreFonction(self):
 #       print("Nom: " + self.nom)
@@ -27,13 +29,14 @@ class Personne:
 
 
 # ----- UTILISATION -----
-personne1 = Personne("Jean")  # Je cree une personne
-personne2 = Personne("Paul")  # Je cree une personne
+personne1 = Personne("Jean", 30)  # Je cree une personne
+personne2 = Personne("Paul", 25)  # Je cree une personne
 
 # Personne.SePresenter(personne1)
 personne1.SePresenter()
-# personne1.AutreFonction()
 personne2.SePresenter() # méthode d'instance
+
+# personne1.AutreFonction()
 
 # personne.AutreFonction()  # méthode de classe
 
