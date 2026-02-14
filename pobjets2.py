@@ -22,17 +22,23 @@
 #  => DemanderNom(...) -> input("") -> nom
 
 class Personne:
-    def __init__(self, nom: str, age: int): 
+    def __init__(self, nom: str = "", age: int = 0): 
         self.nom = nom   # crée une variable d'instance : nom
         self.age = age
-        print("Constructeur personne " + nom)   
+        if nom == "":
+            self.DemanderNom()
+        print("Constructeur personne " + self.nom)   
         
     def SePresenter(self):
         # Bonjour, je m'appelle Jean, j'ai 30 ans
-        if self.age == 0:
-            print("Bonjour, je m'appelle " + self.nom)
-        else:
-            print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
+        # Je suis majeur
+        info_personne = "Bonjour, je m'appelle " + self.nom
+        if self.age != 0:
+            info_personne += ", j'ai " + str(self.age) + " ans"
+            
+        print(info_personne)
+            
+        if self.age != 0:
             if self.EstMajeur():
                 print("Je suis majeur")
             else:
@@ -44,6 +50,9 @@ class Personne:
 
     def EstMajeur(self):
         return self.age >= 18  
+    
+    def DemanderNom(self):
+        self.nom = input("Nom de la personne : ")
 
 
 
@@ -51,11 +60,13 @@ class Personne:
 personne1 = Personne("Jean", 30)  # Je cree une personne
 personne2 = Personne("Paul", 15)  # Je cree une personne
 personne3 = Personne()
+personne4 = Personne(age=20)
 
 # Personne.SePresenter(personne1)
 personne1.SePresenter()
 personne2.SePresenter() # méthode d'instance
 personne3.SePresenter()
+personne4.SePresenter()
 
 # print("estMajeur2 : ", personne2.EstMajeur())
 
