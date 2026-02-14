@@ -22,23 +22,34 @@ class Personne:
     def SePresenter(self):
         # Bonjour, je m'appelle Jean, j'ai 30 ans
         print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
+        if self.EstMajeur():
+            print("Je suis majeur")
+        else:
+            print("Je suis mineur")
         
 #   def AutreFonction(self):
 #       print("Nom: " + self.nom)
+#   EstMajeur -> True / False
+
+    def EstMajeur(self):
+        return self.age >= 18  
 
 
 
 # ----- UTILISATION -----
 personne1 = Personne("Jean", 30)  # Je cree une personne
-personne2 = Personne("Paul", 25)  # Je cree une personne
+personne2 = Personne("Paul", 15)  # Je cree une personne
 
 # Personne.SePresenter(personne1)
 personne1.SePresenter()
 personne2.SePresenter() # méthode d'instance
 
+# print("estMajeur2 : ", personne2.EstMajeur())
+
 # personne1.AutreFonction()
 
 # personne.AutreFonction()  # méthode de classe
+
 
 
 
