@@ -13,6 +13,14 @@
 #  [Personne "Jean"]    [Personne "Paul"]
 
 # ----- DEFINITION -----
+# nom : str
+# age : int
+# 1 - Si age == 0
+#  =>Bonjour, je m'appelle Toto
+#  =>On affiche pas mineur
+#  => Demander le nom à l'utilisateur
+#  => DemanderNom(...) -> input("") -> nom
+
 class Personne:
     def __init__(self, nom: str, age: int): 
         self.nom = nom   # crée une variable d'instance : nom
@@ -21,11 +29,14 @@ class Personne:
         
     def SePresenter(self):
         # Bonjour, je m'appelle Jean, j'ai 30 ans
-        print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
-        if self.EstMajeur():
-            print("Je suis majeur")
+        if self.age == 0:
+            print("Bonjour, je m'appelle " + self.nom)
         else:
-            print("Je suis mineur")
+            print("Bonjour, je m'appelle " + self.nom + ", j'ai " + str(self.age) + " ans")
+            if self.EstMajeur():
+                print("Je suis majeur")
+            else:
+                print("Je suis mineur")
         
 #   def AutreFonction(self):
 #       print("Nom: " + self.nom)
@@ -39,10 +50,12 @@ class Personne:
 # ----- UTILISATION -----
 personne1 = Personne("Jean", 30)  # Je cree une personne
 personne2 = Personne("Paul", 15)  # Je cree une personne
+personne3 = Personne()
 
 # Personne.SePresenter(personne1)
 personne1.SePresenter()
 personne2.SePresenter() # méthode d'instance
+personne3.SePresenter()
 
 # print("estMajeur2 : ", personne2.EstMajeur())
 
