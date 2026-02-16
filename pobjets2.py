@@ -57,16 +57,21 @@ class Personne:
 
 
 # ----- UTILISATION -----
-personne1 = Personne("Jean", 30)  # Je cree une personne
-personne2 = Personne("Paul", 15)  # Je cree une personne
-personne3 = Personne()
-personne4 = Personne(age=20)
+# personne1 = Personne("Jean", 30)  # Je cree une personne
+# personne2 = Personne("Paul", 15)  # Je cree une personne
+
+
+liste_personnes = (Personne("Jean", 30), Personne("Paul", 15), Personne())
+liste_personnes[1].SePresenter()
+
+# personne3 = Personne()
+# personne4 = Personne(age=20)
 
 # Personne.SePresenter(personne1)
-personne1.SePresenter()
-personne2.SePresenter() # méthode d'instance
-personne3.SePresenter()
-personne4.SePresenter()
+# personne1.SePresenter()
+# personne2.SePresenter() # méthode d'instance
+# personne3.SePresenter()
+# personne4.SePresenter()
 
 # print("estMajeur2 : ", personne2.EstMajeur())
 
