@@ -61,12 +61,20 @@ class Personne:
 # personne2 = Personne("Paul", 15)  # Je cree une personne
 
 
-liste_personnes = (Personne("Jean", 30), Personne("Paul", 15), Personne())
-liste_personnes[1].SePresenter()
+liste_personnes = [Personne("Jean", 30), Personne("Paul", 15), Personne()]
+# liste_personnes[1].SePresenter()
+print("Affichage liste 1")
+for personne in liste_personnes:
+    personne.SePresenter()
 
 # personne3 = Personne()
-# personne4 = Personne(age=20)
+personne4 = Personne(age=20)
+liste_personnes.append(personne4)
 
+print("Affichage liste 2")
+for personne in liste_personnes:
+    personne.SePresenter()
+    
 # Personne.SePresenter(personne1)
 # personne1.SePresenter()
 # personne2.SePresenter() # méthode d'instance
