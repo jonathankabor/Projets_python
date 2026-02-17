@@ -9,15 +9,24 @@ class Personne:
         print("Bonjour, je m'appelle " + self.nom)
 
 # ---
-noms = []
-noms.append(input("nom de la personne 1 : "))
-noms.append(input("nom de la personne 2 : "))
-noms.append(input("nom de la personne 3 : "))
+nombre_de_personnes = 3
 
-l = []
+# noms = []
 
-for nom in noms:
-    l.append(Personne(nom))
+liste_personnes = []
 
-for p in l:
-    print(p.SePresenter())
+for i in range(nombre_de_personnes):
+    nom = input("nom de la personne 1 : " + str(i+1) + " : ")
+    liste_personnes.append(Personne(nom))
+
+
+# noms.append(input("nom de la personne 2 : "))
+# noms.append(input("nom de la personne 3 : "))
+
+# l = []
+
+# for nom in noms:
+#    l.append(Personne(nom))
+
+for personne in liste_personnes:
+    personne.SePresenter()
