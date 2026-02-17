@@ -14,6 +14,9 @@
 
 
 class Personne:
+    ESPECE_ETRE_VIVANT = "Humain (Mammifère Homo sapiens)" # variables de classe (1 pour toutes les personnes)
+    
+    
     def __init__(self, nom: str = "", age: int = 0): 
         self.nom = nom   # crée une variable d'instance : nom
         self.age = age
@@ -43,6 +46,10 @@ class Personne:
     
     def DemanderNom(self):
         self.nom = input("Nom de la personne : ")
+        
+    def AfficherInfosEtreVivant(self):
+        print("Info être vivant : " + Personne.ESPECE_ETRE_VIVANT) # ici je peux faire un self ou utiliser Personne 
+# Car c'est une variable de classe
 
 
 
@@ -54,9 +61,23 @@ liste_personnes = [Personne("Jean", 30),
                    Personne("Zoe, 20")]
 
 
+# Personne.espece_etre_vivant = "Mutant"
+# liste_personnes[0].espece_etre_vivant = "Mutant"
+
 for personne in liste_personnes:
     personne.SePresenter()
+    personne.AfficherInfosEtreVivant()
+    print()
 
+
+# Personne
+# -> Personne.espece_etre_vivant
+# personne1
+#      -> self.espece_etre_vivant (copie de la variable de classe pour en faire une variable d'instance)
+# personne2
+#      -> self.espece_etre_vivant
+# personne3
+#      -> self.espece_etre_vivant
 
 
 
