@@ -12,8 +12,23 @@
 #       - DemanderNom (input)
 #  [Personne "Jean"]    [Personne "Paul"]
 
+#     EtreVivant          ## Classe parent   
+#    Chat          Personne        ## Classes enfant (classes dérivées)
 
-class Personne:
+
+class EtreVivant:
+    ESPECE_ETRE_VIVANT = "(être vivant non identifié)"
+    
+    def AfficherInfosEtreVivant(self):
+        print("Info être vivant : " + self.ESPECE_ETRE_VIVANT) 
+
+class Chat(EtreVivant):
+    ESPECE_ETRE_VIVANT = "Chat (Mammifère félin)"
+
+        
+        
+
+class Personne(EtreVivant):
     ESPECE_ETRE_VIVANT = "Humain (Mammifère Homo sapiens)" # variables de classe (1 pour toutes les personnes)
     
     
@@ -47,11 +62,25 @@ class Personne:
     def DemanderNom(self):
         self.nom = input("Nom de la personne : ")
         
-    def AfficherInfosEtreVivant(self):
-        print("Info être vivant : " + Personne.ESPECE_ETRE_VIVANT) # ici je peux faire un self ou utiliser Personne 
+#    def AfficherInfosEtreVivant(self):
+#        print("Info être vivant : " + self.ESPECE_ETRE_VIVANT) # ici je peux faire un self ou utiliser Personne 
 # Car c'est une variable de classe
 
+# EtreVivant
+# Personne 
+# Etudiant
 
+class Etudiant(Personne):
+    def __init__(self, nom: str, age: int, etudes: str): 
+#        self.nom = nom   # crée une variable d'instance : nom
+#        self.age = age
+         super().__init__(nom, age)
+         self.etudes = etudes
+         
+    
+    def SePresenter(self):  # surchargé la méthode SePresenter
+        super().SePresenter()
+        print("Je suis etudiant en " + self.etudes)
 
 # ----- UTILISATION -----
 
@@ -68,6 +97,16 @@ for personne in liste_personnes:
     personne.SePresenter()
     personne.AfficherInfosEtreVivant()
     print()
+
+chat = Chat()
+chat.AfficherInfosEtreVivant()
+
+etreVivant = EtreVivant()
+etreVivant.AfficherInfosEtreVivant()
+
+etudiant = Etudiant("Marc", 22, "Ecole d'ingénieur informatique")
+etudiant.SePresenter()
+etudiant.AfficherInfosEtreVivant()
 
 
 # Personne
