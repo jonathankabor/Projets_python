@@ -25,19 +25,34 @@ class Pizza:
 # ingredients = ("brie", "emmental", "compté", "parmesan")
 # print(", ".join(ingredients))
 
+class PizzaPersonnalisee(Pizza):
+    def __init__(self):
+        super().__init__("Personnalisée", 0, [])
+        self.demander_ingredients_utilisateur()
+        
+    def demander_ingredients_utilisateur(self):
+        while True:
+            ingredient = input("Ajoutez un ingredient (ou ENTRER pour terminer) : ")
+            if ingredient == "":
+                return 
+            self.ingredients.append(ingredient)
+            print(f"Vous avez {len(self.ingredients)} ingrédient(s) : {', '.join(self.ingredients)}")
+
+
 pizzas = [
     Pizza("4 fromages", 8.5, ("brie", "emmental", "compté", "parmesan"), True),
     Pizza("Hawai", 9.5, ("tomate", "ananas", "oignons")),
     Pizza("4 saisons", 11, ("oeuf", "emmental", "tomate", "jambon", "olives")),
-    Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True)      
+    Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True),
+    PizzaPersonnalisee()     
 ]
 
-def tri(e):
-    return e.nom
+# def tri(e):
+#    return e.nom
     
 # Tri par ingrédients return len(e.ingrdients)   
 
-pizzas.sort(key=tri)    
+# pizzas.sort(key=tri)    
 
 # boucle : afficher
 # (1) Les pizzas vegetariennes : if i.vegetarienne:
