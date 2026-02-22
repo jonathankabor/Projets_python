@@ -25,12 +25,19 @@ class Pizza:
 # ingredients = ("brie", "emmental", "compté", "parmesan")
 # print(", ".join(ingredients))
 
-pizzas = (
+pizzas = [
     Pizza("4 fromages", 8.5, ("brie", "emmental", "compté", "parmesan"), True),
     Pizza("Hawai", 9.5, ("tomate", "ananas", "oignons")),
-    Pizza("4 saisons", 11, ("oeuf", "emmental", "tomate", "jambon")),
+    Pizza("4 saisons", 11, ("oeuf", "emmental", "tomate", "jambon", "olives")),
     Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True)      
-)      
+]
+
+def tri(e):
+    return e.nom
+    
+# Tri par ingrédients return len(e.ingrdients)   
+
+pizzas.sort(key=tri)    
 
 # boucle : afficher
 # (1) Les pizzas vegetariennes : if i.vegetarienne:
@@ -39,5 +46,4 @@ pizzas = (
 # (4) Que les pizzas à moins de 10 € : if i.prix < 10:
 
 for i in pizzas:
-    if i.prix < 10:
-        i.Afficher()
+    i.Afficher()
