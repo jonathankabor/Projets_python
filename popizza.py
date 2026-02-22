@@ -32,5 +32,12 @@ pizzas = (
     Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True)      
 )      
 
+# boucle : afficher
+# (1) Les pizzas vegetariennes : if i.vegetarienne:
+# (2) Les pizzas non-vegetariennes : if not i.vegetarienne:
+# (3) Les pizzas qui ont de la tomate : if "tomate" in i.ingredients:
+# (4) Que les pizzas à moins de 10 € : if i.prix < 10:
+
 for i in pizzas:
-    i.Afficher()
+    if i.prix < 10:
+        i.Afficher()
