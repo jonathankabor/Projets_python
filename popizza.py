@@ -29,12 +29,15 @@ class PizzaPersonnalisee(Pizza):
     PRIX_DE_BASE = 7
     PRIX_PAR_INGREDIENT = 1.2
     
-    def __init__(self):
+    def __init__(self, numero):
+        self.numero = numero
         super().__init__("Personnalisée", 0, [])
         self.demander_ingredients_utilisateur()
         self.calculer_le_prix()
         
     def demander_ingredients_utilisateur(self):
+        print()
+        print(f"Ingredients pour la pizza personnalisée {self.numero}")
         while True:
             ingredient = input("Ajoutez un ingredient (ou ENTRER pour terminer) : ")
             if ingredient == "":
@@ -51,7 +54,8 @@ pizzas = [
     Pizza("Hawai", 9.5, ("tomate", "ananas", "oignons")),
     Pizza("4 saisons", 11, ("oeuf", "emmental", "tomate", "jambon", "olives")),
     Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True),
-    PizzaPersonnalisee()     
+    PizzaPersonnalisee(1), 
+    PizzaPersonnalisee(2)     
 ]
 
 # def tri(e):
