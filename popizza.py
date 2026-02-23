@@ -26,9 +26,13 @@ class Pizza:
 # print(", ".join(ingredients))
 
 class PizzaPersonnalisee(Pizza):
+    PRIX_DE_BASE = 7
+    PRIX_PAR_INGREDIENT = 1.2
+    
     def __init__(self):
         super().__init__("Personnalisée", 0, [])
         self.demander_ingredients_utilisateur()
+        self.calculer_le_prix()
         
     def demander_ingredients_utilisateur(self):
         while True:
@@ -37,6 +41,9 @@ class PizzaPersonnalisee(Pizza):
                 return 
             self.ingredients.append(ingredient)
             print(f"Vous avez {len(self.ingredients)} ingrédient(s) : {', '.join(self.ingredients)}")
+            
+    def calculer_le_prix(self):
+        self.prix = self.PRIX_DE_BASE + len(self.ingredients)*self.PRIX_PAR_INGREDIENT
 
 
 pizzas = [
