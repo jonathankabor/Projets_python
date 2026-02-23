@@ -28,10 +28,12 @@ class Pizza:
 class PizzaPersonnalisee(Pizza):
     PRIX_DE_BASE = 7
     PRIX_PAR_INGREDIENT = 1.2
+    dernier_numero = 0
     
-    def __init__(self, numero):
-        self.numero = numero
-        super().__init__("Personnalisée", 0, [])
+    def __init__(self):
+        PizzaPersonnalisee.dernier_numero +=1
+        self.numero = PizzaPersonnalisee.dernier_numero
+        super().__init__("Personnalisée " + str(self.numero), 0, [])
         self.demander_ingredients_utilisateur()
         self.calculer_le_prix()
         
@@ -54,8 +56,8 @@ pizzas = [
     Pizza("Hawai", 9.5, ("tomate", "ananas", "oignons")),
     Pizza("4 saisons", 11, ("oeuf", "emmental", "tomate", "jambon", "olives")),
     Pizza("Végétarienne", 7.8, ("champignons", "tomate", "oignons", "poivrons"), True),
-    PizzaPersonnalisee(1), 
-    PizzaPersonnalisee(2)     
+    PizzaPersonnalisee(), 
+    PizzaPersonnalisee()     
 ]
 
 # def tri(e):
