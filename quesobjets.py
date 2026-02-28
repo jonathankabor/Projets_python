@@ -23,6 +23,11 @@ class Question:
         self.titre = titre 
         self.choix = choix
         self.bonne_reponse = bonne_reponse
+    
+    def FromData(data):
+        #....
+        q = Question(data[2], data[0], data[1])
+        return q
         
     def poser(self):
         print("QUESTION")
@@ -97,6 +102,10 @@ lancer_questionnaire(questionnaire)
 
 # q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
 # q1.poser()
+
+# data = (("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris", "Quelle est la capitale de la France ?")
+# q = Question.FromData(data)
+# print(q.__dict__)
 
 Questionnaire( 
     (
