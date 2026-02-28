@@ -56,6 +56,18 @@ class Question:
         return demander_reponse_numerique_utlisateur(min, max)
     
 
+
+class Questionnaire():
+    def __init__(self, questions):
+        self.questions = questions
+        
+    def lancer(self):
+        score = 0
+        for question in self.questions:
+            if question.poser():
+                score += 1
+        print("Score final :", score, "sur", len(self.questions))
+        return score
 '''
 titre = question[0]
 choix = question[1]
@@ -71,15 +83,7 @@ bonne_reponse = question[2]
             bonne_reponse = "Paris"
 
 '''
-
     
-    
-def lancer_questionnaire(questionnaire):
-    score = 0
-    for question in questionnaire:
-        if poser_question(question):
-            score += 1
-    print("Score final :", score, "sur", len(questionnaire))
 
 """
 questionnaire = (
@@ -91,8 +95,17 @@ questionnaire = (
 lancer_questionnaire(questionnaire)
 """
 
-q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
-q1.poser()
+# q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
+# q1.poser()
+
+Questionnaire( 
+    (
+    Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
+    Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
+    Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
+    )
+).lancer()
+#lancer
 
 
 
