@@ -1,5 +1,6 @@
-import pygame
-import random
+import sys
+sys.path.append(r"C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\venv\Lib\site-packages")
+import pygame 
 
 
 # Initialize Pygame
