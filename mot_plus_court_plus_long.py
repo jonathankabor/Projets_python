@@ -42,3 +42,5 @@ print("Mot le plus long:", max_word)
 
 # print(min(["aa", "aaaaaa", "zzz"], key=len))
 
+
+
