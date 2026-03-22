@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r"C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\venv\Lib\site-packages")
+sys.path.append(r"C:\Users\Hp\Projets_python\myenv\Lib\site-packages")
 from kivy.config import Config
 from kivy.properties import ObjectProperty
 
