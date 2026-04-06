@@ -1,3 +1,6 @@
+import sys
+sys.path.append(r"C:\Users\Hp\PycharmProjects\pythonProject\RobotFramework\venv\Lib\site-packages")
+
 from bs4 import BeautifulSoup
 
 # Lecture des données HTML
