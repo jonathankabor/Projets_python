@@ -12,6 +12,6 @@ for i in packages:
         pass    
     else:        
         try:
-            os.system(f"C:\\Users\\Hp\\WPy64-31241\\python-3.12.4.amd64\\python.exe -m pip uninstall -y {true_i}")        
+            os.system(r"C:\Users\Hp\WPy64-31241\python-3.12.4.amd64\python.exe -m pip uninstall -y {true_i}")        
         except:
             print("échec")
