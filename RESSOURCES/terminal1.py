@@ -4,4 +4,8 @@ import subprocess
 
 # Popen : ancienne interface
 # run : executer la commande et attendre le résultat
-subprocess.run("dir", shell=True)  # dir sur PC
+resultat = subprocess.run("dir", shell=True, capture_output=True, universal_newlines=True)  # dir sur PC
+
+
+print(resultat.stdout)
+print(resultat.stderr)
