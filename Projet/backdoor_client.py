@@ -6,7 +6,7 @@ import platform
 import os
 from PIL import ImageGrab
 
-HOST_IP = "127.0.0.1"
+HOST_IP = "127.0.0.1" #pour une connexion distante, remplacer par l'adresse IP du client
 HOST_PORT = 32000
 MAX_DATA_SIZE = 1024
 
