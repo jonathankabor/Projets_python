@@ -98,7 +98,7 @@ a.contact-button:hover {
 }
 
 div.section-grise1 {
-    background: url(triangle2white.svg) no-repeat center bottom/100%;
+    background: url(triangle2white.svg) no-repeat center bottom -1px/100%;
     background-color: var(--color2);
     padding-bottom: 70px;
 }
@@ -221,3 +221,4 @@ img.portfolio {
     width: 70%;
     max-width: 550px;
 }
+
